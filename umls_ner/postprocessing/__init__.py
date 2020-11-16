@@ -124,13 +124,16 @@ def filter_sym(cancer_file, dataframe, out_file, mode, key='glioma', delimiter=N
 # df = row_merge_by(in_file='output/test_output.csv',
 #                   column_name=['SentenceID', 'Text', 'Symptom', 'Detect'])
 
+# # ===== 過濾位置與屬性 =====
+# df_1 = filter_loc_att(df, loc_keys, att_patterns)
+
 # ===== 病灶詞標準化 =====
-# df_new = field_normalization(map_file='program_data/symptom_map_list.csv',
-#                              dataframe=df,
+# df_2 = field_normalization(map_file='program_data/symptom_map_list.csv',
+#                              dataframe=df_1,
 #                              target='Symptom')
 
 # ===== 篩選病灶詞 =====
 # filter_sym(cancer_file='program_data/cancer_sym.txt',
-#            dataframe=df_new,
+#            dataframe=df_2,
 #            out_file='output/test_output_final.csv',
 #            mode='Lung_CT')
